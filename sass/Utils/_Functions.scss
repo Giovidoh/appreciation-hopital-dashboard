@@ -1,0 +1,11 @@
+@function opacify-color($color, $amount){
+    @return rgba($color, $amount);
+}
+
+@function darken-color($color, $percent){
+    @return darken($color, $percent);
+}
+
+@function lighten-color($color, $percent){
+    @return lighten($color, $percent);
+}

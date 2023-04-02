@@ -9,9 +9,9 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="dashboard">
-        <header class="dashboard-side">
-            <span class="dashboard-side__title">TABLEAU DE BORD</span>
+    <header class="dashboard-side">
+        <span class="dashboard-side__title">TABLEAU DE BORD</span>
+        <div class="dashboard-side__container">
             <nav>
                 <ul>
                     <li><a class="dashboard-side__link" href="index.php">Tableau de bord</a></li>
@@ -19,4 +19,8 @@
                     <!-- <li><a class="dashboard-side__link" href="index.php">Dashboard</a></li> -->
                 </ul>
             </nav>
-        </header>
+
+            <a class="dashboard-side__link" href="">Déconnexion</a>
+        </div>
+        
+    </header>

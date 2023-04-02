@@ -1,0 +1,20 @@
+@mixin header-links(){
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $pure-white;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid opacify-color($pure-white, 0.4);
+    border-radius: 5px;
+    height: 43px;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+@mixin header-links-hover(){
+    &:hover{
+        background-color: opacify-color($pure-white, 0.1);
+        box-shadow: 0px 5px 5px opacify-color($pure-black, 0.3);
+    }
+}
