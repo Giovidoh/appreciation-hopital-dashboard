@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.dashboard-side {
+  width: 30%;
+  height: 100%;
+  background-color: #333;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dashboard-main {
+  width: 70%;
+  height: 100%;
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
