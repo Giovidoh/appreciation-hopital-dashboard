@@ -1,22 +1,24 @@
 .inscription-main{
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 .inscription-main-form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 500px;
+    justify-content: center;
+    min-height: 500px;
         &__heading{
             font-family: 'Inter', sans-serif;
             text-align: center;
+            margin: 20px 0;
         }
 
         &__form{
             @include dashboard-forms();
-                input[type="text"], input[type="password"] {
+                input[type="text"], input[type="password"], select {
                     @include inscription-connexion-input();
                 }
 

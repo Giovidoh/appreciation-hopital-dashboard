@@ -5,6 +5,7 @@
         $prenom = addslashes($_POST['prenom']);
         $id = addslashes($_POST['identifiant']);
         $mdp = addslashes($_POST['mdp']);
+        $type = addslashes($_POST['type']);
 
         //Vérifier si l'identifiant existe
         $sql = "SELECT *
@@ -18,7 +19,7 @@
         }else{
             //Insérer le nouvel utilisateur dans la bdd
             $sql = "INSERT INTO utilisateur
-                    VALUES(NULL, '$nom', '$prenom', '$id', '$mdp');";
+                    VALUES(NULL, '$nom', '$prenom', '$id', '$mdp', '$type');";
             $resultat = mysqli_query($connexion, $sql);
             if($resultat){
                 $message = "L'utilisateur '$id' a été ajouté.";

@@ -44,6 +44,11 @@
                 <input type="text" name="prenom" placeholder="Prénom(s)" required>
                 <input type="text" name="identifiant" placeholder="Identifiant" required>
                 <input type="password" name="mdp" placeholder="Mot de passe" required>
+                <select name="type" id="">
+                    <option value="" selected disabled>Choisissez le type de l'utilisateur</option>
+                    <option value="admin">administrateur</option>
+                    <option value="user">utilisateur</option>
+                </select>
 
                 <input type="submit" name="send" value="Envoyer">
             </form>
