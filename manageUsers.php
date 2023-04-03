@@ -37,7 +37,8 @@
                 <tbody>
                     <?php
                         $sql = "SELECT NumUt, NomUt, PrenomUt, TypeUt
-                                FROM utilisateur;";
+                                FROM utilisateur
+                                ORDER BY NumUt DESC;";
                         $resultat = mysqli_query($connexion, $sql);
                         while($rows = mysqli_fetch_assoc($resultat)):
                     ?>

@@ -149,7 +149,8 @@
                 <tbody>
                     <?php
                         $sql = "SELECT NumObs, AppreciationObs, CommentaireObs, NomObs, ContactObs
-                                FROM observation;";
+                                FROM observation
+                                ORDER BY NumObs DESC;";
                         $resultat = mysqli_query($connexion, $sql);
                         while($rows = mysqli_fetch_assoc($resultat)):
                     ?>

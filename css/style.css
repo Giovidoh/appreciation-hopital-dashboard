@@ -284,6 +284,7 @@ main {
   border: 1px solid rgba(66, 130, 214, 0.5);
   max-width: 300px;
   word-break: break-all;
+  hyphens: auto;
 }
 
 .inscription-main {
@@ -343,63 +344,13 @@ main {
   color: #FFFFFF;
 }
 
-.manageUsers-main-heading {
-  height: 200px;
-  width: 100%;
-  border: 1px solid #4282d6;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.manageUsers-main-heading__title {
-  margin: 0px 0px 10px 0px;
-  text-transform: uppercase;
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-}
-.manageUsers-main-heading__box {
-  height: 200px;
-  width: 200px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.manageUsers-main-heading__box__appreciation {
-  font-family: "Inter", sans-serif;
-  font-size: 17px;
-  font-weight: 500;
-  width: 100%;
-  text-align: center;
-}
-.manageUsers-main-heading__box__count {
-  height: 130px;
-  width: 130px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3px 15px;
-  background-color: #4282d6;
-  color: #FFFFFF;
-  border-radius: 15px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), inset 3px 3px 10px rgba(0, 0, 0, 0.3), inset -3px -3px 10px rgba(255, 255, 255, 0.3);
-}
-.manageUsers-main-heading__box__count span {
-  font-family: "Inter", sans-serif;
-  font-size: 17px;
-}
-
 .manageUsers-main-usersList {
   width: 100%;
   font-family: "Inter", sans-serif;
   display: flex;
 }
 .manageUsers-main-usersList__title {
-  margin: 50px 0px 10px 0px;
+  margin: 0px 0px 10px 0px;
   text-transform: uppercase;
   font-family: "Inter", sans-serif;
   font-size: 18px;

@@ -74,5 +74,6 @@
             border: 1px solid opacify-color($color-secondary-2, 0.5);
             max-width: 300px;
             word-break: break-all;
+            hyphens: auto;
         }
 }
