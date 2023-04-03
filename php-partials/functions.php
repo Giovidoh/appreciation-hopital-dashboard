@@ -33,6 +33,7 @@
     function add_nav_menu_admin(){
         return
             add_nav_item("index.php", "Tableau de bord").
-            add_nav_item("inscription.php", "Création des utilisateurs");
+            add_nav_item("inscription.php", "Création des utilisateurs").
+            add_nav_item("manageUsers.php", "Gérer les utilisateurs");
     }
 ?>

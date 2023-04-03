@@ -29,13 +29,16 @@
     @import "Layouts/Header";
 
 //PAGES
+    //Page de connexion
+    @import "Pages/Connexion";
+
     //Page index
     @import "Pages/Index";
 
     //Page de création d'un nouvelle utilisateur
     @import "Pages/Inscription";
 
-    //Page de connexion
-    @import "Pages/Connexion";
+    //Page de gestion des utilisateur
+    @import "Pages/ManageUsers";
 
 //THEMES
