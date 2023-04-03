@@ -1,6 +1,78 @@
-.dashboard-main{
-    width: 70%;
-    height: 100%;
-    background-color: red;
+.dashboard-main-heading{
+    height: 200px;
+    width: 100%;
+    border: 1px solid $color-secondary-2;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+        &__title{
+            margin: 0px 0px 10px 0px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        &__box{
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+                &__appreciation{
+                    font-family: 'Inter', sans-serif;
+                    font-size: 17px;
+                    font-weight: 500;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &__count{
+                    @include dashboard-appreciation-count($color: $pure-white, $bgcolor: $color-secondary-2);
+                        span{
+                            font-family: 'Inter', sans-serif;
+                            font-size: 17px;
+                        }
+                }
+        }
 }
 
+.dashboard-main-answers{
+    // margin-bottom: 30px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+        &__title{
+            margin: 50px 0px 10px 0px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        table{
+            width: 100%;
+            // border-collapse: collapse;
+        }
+
+        th, td{
+            padding: 10px;
+        }
+
+        th{
+            text-align: left;
+            border: 1px solid opacify-color($color-secondary-2, 0.5);
+            background-color: $color-primary;
+            box-shadow: 1px 1px 5px opacify-color($pure-black, 0.3),
+                        inset -2px -2px 5px opacify-color($color-secondary-2, 0.2);
+        }
+
+        td{
+            border: 1px solid opacify-color($color-secondary-2, 0.5);
+            max-width: 300px;
+            word-break: break-all;
+        }
+}

@@ -17,6 +17,9 @@
     //UNIVERSAL SELECTOR
     @import "Base/UniversalSelector";
 
+    //MAIN
+    @import "Base/MainTag";
+
 //COMPONENTS
 
 //LAYOUTS
@@ -26,5 +29,8 @@
 //PAGES
     //Page index
     @import "Pages/Index";
+
+    //Page de création d'un nouvelle utilisateur
+    @import "Pages/Inscription";
 
 //THEMES

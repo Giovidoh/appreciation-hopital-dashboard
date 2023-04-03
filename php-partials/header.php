@@ -14,13 +14,16 @@
         <div class="dashboard-side__container">
             <nav>
                 <ul>
-                    <li><a class="dashboard-side__link" href="index.php">Tableau de bord</a></li>
-                    <li><a class="dashboard-side__link" href="index.php">Création des utilisateurs</a></li>
+                    <?php
+                        //AJOUT DU MENU
+                        echo add_nav_menu();
+                    ?>
+                    
                     <!-- <li><a class="dashboard-side__link" href="index.php">Dashboard</a></li> -->
                 </ul>
             </nav>
 
-            <a class="dashboard-side__link" href="">Déconnexion</a>
+            <a class="dashboard-side__link dashboard-side__link--deconnexion" href="">Déconnexion</a>
         </div>
         
     </header>
