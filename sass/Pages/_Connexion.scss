@@ -1,13 +1,17 @@
-.inscription-main{
-    align-items: center;
+.connexion-main{
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    background-color: $color-secondary-1;
 }
 
-.inscription-main-form{
+.connexion-main-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 500px;
+    height: 300px;
         &__heading{
             font-family: 'Inter', sans-serif;
             text-align: center;
@@ -15,7 +19,7 @@
 
         &__form{
             min-width: 300px;
-            width: 50%;
+            width: 30%;
             display: flex;
             flex-direction: column;
                 input[type="text"]{

@@ -41,12 +41,20 @@
     color: $color;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
-    border: 1px solid opacify-color($color-secondary-1, 0.4);
+    border: none;
     border-radius: 5px;
     height: 43px;
     width: 100%;
     cursor: pointer;
     transition: 0.3s ease;
+}
+
+@mixin inscription-links-hover($color: $color-secondary-1, $bgcolor: transparent, $opacity-amount: 0.7){
+    &:hover{
+        background-color: opacify-color($bgcolor, $opacity-amount);
+        box-shadow: 0px 5px 5px opacify-color($pure-black, 0.1);
+        color: $color;
+    }
 }
 
 @mixin inscription-connexion-input(){
