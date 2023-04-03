@@ -55,10 +55,16 @@
             </table>
         </div>
         
-        <div class="manageUsers-main-confirmation">
+        <div id="manageUsers-main-overflow" class="manageUsers-main-overflow"></div>
+
+        <div id="manageUsers-main-confirmation" class="manageUsers-main-confirmation">
+            <span id="closing-cross" class="manageUsers-main-confirmation__closing-cross">&times;</span>
             <span class="manageUsers-main-confirmation__question">Voulez-vous réellement supprimer cet utilisateur ?</span>
             <form class="manageUsers-main-confirmation__form" method="POST">
-                <span class="manageUsers-main-confirmation__form__info">1 Giovanni</span>
+                <div class="manageUsers-main-confirmation__form__info">
+                    <input id="num" class="manageUsers-main-confirmation__form__info__num" value="">
+                    <span id="identifiant" class="manageUsers-main-confirmation__form__info__id">Giovanni</span>
+                </div>
                 <div class="manageUsers-main-confirmation__form__buttons">
                     <input name="oui" type="submit" class="manageUsers-main-confirmation__form__buttons__oui" value="Oui">
                     <input name="non" type="submit" class="manageUsers-main-confirmation__form__buttons__non" value="Non">
