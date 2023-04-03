@@ -95,7 +95,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(220, 20, 47);
+  background-color: #dc142f;
   color: #E8E8FF;
   font-family: "Inter", sans-serif;
   border: 1px solid rgba(232, 232, 255, 0.4);
