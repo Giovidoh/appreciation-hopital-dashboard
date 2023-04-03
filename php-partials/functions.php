@@ -25,7 +25,12 @@
         return $item;
     }
 
-    function add_nav_menu(){
+    function add_nav_menu_user(){
+        return
+            add_nav_item("index.php", "Tableau de bord");
+    }
+
+    function add_nav_menu_admin(){
         return
             add_nav_item("index.php", "Tableau de bord").
             add_nav_item("inscription.php", "Création des utilisateurs");

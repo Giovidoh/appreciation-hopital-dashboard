@@ -1,3 +1,11 @@
+<!-- LES TYPES D'UTILISATEURS -->
+<?php
+    require_once('functions.php');
+    
+    $admin = 'admin';
+    $user = 'user';
+?>
+
 <?php
     if(isset($_SESSION['id'])): 
 ?>
@@ -20,7 +28,11 @@
                 <ul>
                     <?php
                         //AJOUT DU MENU
-                        echo add_nav_menu();
+                        if($_SESSION['type'] === $user){
+                            echo add_nav_menu_user();
+                        } elseif($_SESSION['type'] === $admin) {
+                            echo add_nav_menu_admin();
+                        }
                     ?>
                     
                     <!-- <li><a class="dashboard-side__link" href="index.php">Dashboard</a></li> -->
