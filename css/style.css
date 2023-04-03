@@ -36,6 +36,7 @@ main {
 }
 .dashboard-side__title {
   display: block;
+  text-transform: uppercase;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 500;

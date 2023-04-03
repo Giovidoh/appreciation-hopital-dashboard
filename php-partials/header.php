@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="dashboard-side">
-        <span class="dashboard-side__title">TABLEAU DE BORD</span>
+        <span class="dashboard-side__title"><?php if($name){ echo $name; }else{ echo "Mon site"; } ?></span>
         <div class="dashboard-side__container">
             <nav>
                 <ul>

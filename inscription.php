@@ -3,6 +3,11 @@
     require_once("php-partials/functions.php");
 ?>
 
+<!-- NOM DE LA PAGE -->
+<?php
+    $name = "Création des utilisateurs"
+?>
+
 <!-- HEADER -->
 <?php
     require_once("php-partials/header.php");
