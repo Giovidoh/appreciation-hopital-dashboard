@@ -1,7 +1,5 @@
 <!-- LES TYPES D'UTILISATEURS -->
 <?php
-    require_once('functions.php');
-    
     $admin = 'admin';
     $user = 'user';
 ?>
