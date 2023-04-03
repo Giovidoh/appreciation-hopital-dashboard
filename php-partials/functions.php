@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     function dump($variable){
         echo '<pre>';
         var_dump($variable);

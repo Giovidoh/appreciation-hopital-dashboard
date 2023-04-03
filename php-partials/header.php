@@ -1,3 +1,7 @@
+<?php
+    if(isset($_SESSION['id'])):
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +27,12 @@
                 </ul>
             </nav>
 
-            <a class="dashboard-side__link dashboard-side__link--deconnexion" href="">Déconnexion</a>
+            <a class="dashboard-side__link dashboard-side__link--deconnexion" href="deconnexion.php">Déconnexion</a>
         </div>
         
     </header>
+<?php
+    else: header("Location:connexion.php");
+
+    endif;
+?>

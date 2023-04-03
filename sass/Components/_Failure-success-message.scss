@@ -1,0 +1,20 @@
+.failure-success-message{
+    align-self: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 15px 0px;
+    border-radius: 10px;
+    color: $pure-black;
+}
+
+.failure{
+    border: 1px solid  $color-secondary-3;
+    background-color: opacify-color($color-secondary-3, 0.3);
+}
+
+.success{
+    border: 1px solid  $color-primary;
+    background-color: opacify-color($color-primary, 0.3);
+}

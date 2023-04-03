@@ -13,17 +13,39 @@
     require_once("php-partials/header.php");
 ?>
 
+<!-- CONNEXION À LA BDD -->
+<?php
+    include("php-partials/connectionDB.php");
+?>
+
+<!-- RECUPERATION DES DONNÉES ENTRÉES -->
+<?php
+    include("recup/recupInscription.php");
+?>
+
 <!-- MAIN -->
+
     <main class="inscription-main">
+        <?php
+            if(isset($message) && isset($type)):
+        ?>
+            <p class="failure-success-message <?= $type; ?>">
+                <?php
+                    echo $message;
+                ?>
+            </p>
+        <?php
+            endif;
+        ?>
         <div class="inscription-main-form">
             <h3 class="inscription-main-form__heading">Veuillez renseigner les champs ci-dessous pour créer un nouvel utilisateur</h3>
             <form class="inscription-main-form__form" method="POST" autocomplete="off">
                 <input type="text" name="nom" placeholder="Nom" required>
                 <input type="text" name="prenom" placeholder="Prénom(s)" required>
                 <input type="text" name="identifiant" placeholder="Identifiant" required>
-                <input type="text" name="mdp" placeholder="Mot de passe" required>
+                <input type="password" name="mdp" placeholder="Mot de passe" required>
 
-                <input type="submit" value="Envoyer">
+                <input type="submit" name="send" value="Envoyer">
             </form>
 
         </div>
@@ -32,3 +54,8 @@
 
 </body>
 </html>
+
+<!-- FERMETURE DE LA CONNEXION À LA BDD -->
+<?php
+    mysqli_close($connexion);
+?>

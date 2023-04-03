@@ -1,5 +1,6 @@
 .inscription-main{
     align-items: center;
+    justify-content: center;
 }
 
 .inscription-main-form{
@@ -18,7 +19,7 @@
             width: 50%;
             display: flex;
             flex-direction: column;
-                input[type="text"]{
+                input[type="text"], input[type="password"] {
                     @include inscription-connexion-input();
                 }
 
