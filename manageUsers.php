@@ -18,8 +18,25 @@
     include("php-partials/connectionDB.php");
 ?>
 
+<!-- RECUPÉRATION DES DONNÉES DE SUPPRESSION D'UN UTILISATEUR -->
+<?php
+    include("recup/recupManageUsers.php");
+?>
+
 <!-- MAIN -->
     <main class="manageUsers-main">
+
+        <?php
+            if(isset($message) && isset($type)):
+        ?>
+            <p class="failure-success-message <?= $type; ?>">
+                <?php
+                    echo $message;
+                ?>
+            </p>
+        <?php
+            endif;
+        ?>
 
         <span class="manageUsers-main-usersList__title">Liste des utilisateurs</span>
 
@@ -62,8 +79,11 @@
             <span class="manageUsers-main-confirmation__question">Voulez-vous réellement supprimer cet utilisateur ?</span>
             <form class="manageUsers-main-confirmation__form" method="POST">
                 <div class="manageUsers-main-confirmation__form__info">
-                    <input id="num" class="manageUsers-main-confirmation__form__info__num" value="">
-                    <span id="identifiant" class="manageUsers-main-confirmation__form__info__id">Giovanni</span>
+                    <input id="num" name="numero" class="manageUsers-main-confirmation__form__info__num" value="">
+                    
+                    <span id="identifiant" class="manageUsers-main-confirmation__form__info__id">
+                        Giovanni
+                    </span>
                 </div>
                 <div class="manageUsers-main-confirmation__form__buttons">
                     <input name="oui" type="submit" class="manageUsers-main-confirmation__form__buttons__oui" value="Oui">
