@@ -263,7 +263,7 @@ main {
   display: flex;
 }
 .dashboard-main-answers__title {
-  margin: 50px 0px 10px 0px;
+  margin: 20px 0px 10px 0px;
   text-transform: uppercase;
   font-family: "Inter", sans-serif;
   font-size: 18px;

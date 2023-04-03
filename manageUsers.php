@@ -82,7 +82,7 @@
                     <input id="num" name="numero" class="manageUsers-main-confirmation__form__info__num" value="">
                     
                     <span id="identifiant" class="manageUsers-main-confirmation__form__info__id">
-                        Giovanni
+                        <!-- Giovanni -->
                     </span>
                 </div>
                 <div class="manageUsers-main-confirmation__form__buttons">
