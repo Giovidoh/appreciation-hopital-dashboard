@@ -373,5 +373,94 @@ main {
   max-width: 300px;
   word-break: break-all;
 }
+.manageUsers-main-usersList__deleteUser {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  background-color: rgba(220, 20, 47, 0.4);
+  cursor: pointer;
+}
+
+.manageUsers-main-confirmation {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  width: 800px;
+  border-radius: 10px;
+}
+.manageUsers-main-confirmation.active {
+  display: flex;
+}
+.manageUsers-main-confirmation__question {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  margin: 20px 0;
+}
+.manageUsers-main-confirmation__form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #E8E8FF;
+  box-sizing: content-box;
+  padding: 10%;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.7), 3px 3px 5px rgba(0, 0, 0, 0.1);
+  height: 100px;
+  padding: 3%;
+  justify-content: space-evenly;
+  border: 1px solid black;
+}
+.manageUsers-main-confirmation__form__info {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  margin: 20px 0;
+}
+.manageUsers-main-confirmation__form__buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.manageUsers-main-confirmation__form__buttons input[type=submit] {
+  width: 30%;
+}
+.manageUsers-main-confirmation__form__buttons__oui {
+  background-color: #0AD2A2;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  height: 43px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.manageUsers-main-confirmation__form__buttons__oui:hover {
+  background-color: rgba(10, 210, 162, 0.7);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+}
+.manageUsers-main-confirmation__form__buttons__non {
+  background-color: #dc142f;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  height: 43px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.manageUsers-main-confirmation__form__buttons__non:hover {
+  background-color: rgba(220, 20, 47, 0.7);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+}
 
 /*# sourceMappingURL=style.css.map */

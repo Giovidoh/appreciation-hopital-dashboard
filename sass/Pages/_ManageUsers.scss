@@ -32,4 +32,67 @@
             max-width: 300px;
             word-break: break-all;
         }
+
+        &__deleteUser{
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            padding: 5px 10px;
+            color: $pure-white;
+            background-color: opacify-color($color-secondary-3, 0.4);
+            cursor: pointer;
+        }
+}
+
+.manageUsers-main-confirmation{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    width: 800px;
+    border-radius: 10px;
+        &.active{
+            display: flex;
+        }
+
+        &__question{
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        &__form{
+            @include dashboard-forms();
+            height: 100px;
+            padding: 3%;
+            justify-content: space-evenly;
+            border: 1px solid black;
+                &__info{
+                    font-family: 'Inter', sans-serif;
+                    text-align: center;
+                    margin: 20px 0;
+                }
+
+                &__buttons{
+                    display: flex;
+                    justify-content: space-evenly;
+                        input[type="submit"]{
+                            width: 30%;
+                        }
+
+                        &__oui{
+                            @include inscription-links($color: $pure-white, $bgcolor: $color-primary);
+                            @include inscription-links-hover($color: $pure-white, $bgcolor: $color-primary);
+                        }
+
+                        &__non{
+                            @include inscription-links($color: $pure-white, $bgcolor: $color-secondary-3);
+                            @include inscription-links-hover($color: $pure-white, $bgcolor: $color-secondary-3);
+                        }
+                }
+
+        }
 }

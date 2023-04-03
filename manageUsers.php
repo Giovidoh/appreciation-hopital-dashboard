@@ -46,7 +46,7 @@
                                 <td><?= $rows['NumUt']; ?></td>
                                 <td><?= $rows['NomUt'] . ' ' . $rows['PrenomUt']; ?></td>
                                 <td><?= $rows['TypeUt']; ?></td>
-                                <td></td>
+                                <td><button class="manageUsers-main-usersList__deleteUser delete" value="<?= $rows['NumUt']; ?>">Supprimer</button></td>
                             </tr>
                     <?php
                         endwhile;
@@ -55,8 +55,20 @@
             </table>
         </div>
         
+        <div class="manageUsers-main-confirmation">
+            <span class="manageUsers-main-confirmation__question">Voulez-vous réellement supprimer cet utilisateur ?</span>
+            <form class="manageUsers-main-confirmation__form" method="POST">
+                <span class="manageUsers-main-confirmation__form__info">1 Giovanni</span>
+                <div class="manageUsers-main-confirmation__form__buttons">
+                    <input name="oui" type="submit" class="manageUsers-main-confirmation__form__buttons__oui" value="Oui">
+                    <input name="non" type="submit" class="manageUsers-main-confirmation__form__buttons__non" value="Non">
+                </div>
+            </form>
+        </div>
+
     </main>
     
 
+    <script src="js/manageUsers.js"></script>
 </body>
 </html>
