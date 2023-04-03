@@ -13,6 +13,62 @@
     require_once("php-partials/header.php");
 ?>
 
+<!-- CONNEXION À LA BDD -->
+<?php
+    include("php-partials/connectionDB.php");
+?>
+
+<!-- LES DIFFÉRENTS TYPES D'APPRÉCIATIONS -->
+<?php
+    $TresSatisfait = "Très satisfait";
+    $Satisfait = "Satisfait";
+    $PeuSatisfait = "Peu satisfait";
+    $PasDuToutSatisfait = "Pas du tout satisfait";
+?>
+
+<!-- SELECTIONNER LES NOMBRES DES APPRÉCIATION DE LA BDD -->
+<?php
+    // Nombre de Très satisfait
+    $sql = "SELECT COUNT(*) as nombre
+            FROM observation
+            WHERE AppreciationObs = \"$TresSatisfait\"; ";
+    $resultat = mysqli_query($connexion, $sql);
+    $row = mysqli_fetch_assoc($resultat);
+    if($row){
+        $nbreTresSatisfait = $row['nombre'];
+    }
+
+    // Nombre de Satisfait
+    $sql = "SELECT COUNT(*) as nombre
+            FROM observation
+            WHERE AppreciationObs = \"$Satisfait\"; ";
+    $resultat = mysqli_query($connexion, $sql);
+    $row = mysqli_fetch_assoc($resultat);
+    if($row){
+        $nbreSatisfait = $row['nombre'];
+    }
+
+    // Nombre de Peu satisfait
+    $sql = "SELECT COUNT(*) as nombre
+            FROM observation
+            WHERE AppreciationObs = \"$PeuSatisfait\"; ";
+    $resultat = mysqli_query($connexion, $sql);
+    $row = mysqli_fetch_assoc($resultat);
+    if($row){
+        $nbrePeuSatisfait = $row['nombre'];
+    }
+
+    // Nombre de Pas du tout satisfait
+    $sql = "SELECT COUNT(*) as nombre
+            FROM observation
+            WHERE AppreciationObs = \"$PasDuToutSatisfait\"; ";
+    $resultat = mysqli_query($connexion, $sql);
+    $row = mysqli_fetch_assoc($resultat);
+    if($row){
+        $nbrePasDuToutSatisfait = $row['nombre'];
+    }
+?>
+
 <!-- MAIN -->
     <main class="dashboard-main">
 
@@ -25,7 +81,11 @@
                 </div>
                 
                 <div class="dashboard-main-heading__box__count">
-                    <span>0</span>
+                    <span>
+                        <?php
+                            echo $nbreTresSatisfait;
+                        ?>
+                    </span>
                 </div>
             </div>
 
@@ -35,7 +95,11 @@
                 </div>
                 
                 <div class="dashboard-main-heading__box__count">
-                    <span>0</span>
+                    <span>
+                        <?php
+                            echo $nbreSatisfait;
+                        ?>
+                    </span>
                 </div>
             </div>
 
@@ -45,7 +109,11 @@
                 </div>
                 
                 <div class="dashboard-main-heading__box__count">
-                    <span>0</span>
+                    <span>
+                        <?php
+                            echo $nbrePeuSatisfait;
+                        ?>
+                    </span>
                 </div>
             </div>
 
@@ -55,7 +123,11 @@
                 </div>
                 
                 <div class="dashboard-main-heading__box__count">
-                    <span>0</span>
+                    <span>
+                        <?php
+                            echo $nbrePasDuToutSatisfait;
+                        ?>
+                    </span>
                 </div>
             </div>
         </div>
@@ -75,62 +147,22 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Très satisfaisant</td>
-                        <td>IDOH Cir-Giovanni</td>
-                        <td>70881015</td>
-                        <td>Merci c'était super !</td>
-                    </tr>
+                    <?php
+                        $sql = "SELECT NumObs, AppreciationObs, CommentaireObs, NomObs, ContactObs
+                                FROM observation;";
+                        $resultat = mysqli_query($connexion, $sql);
+                        while($rows = mysqli_fetch_assoc($resultat)):
+                    ?>
+                            <tr>
+                                <td><?= $rows['NumObs']; ?></td>
+                                <td><?= $rows['AppreciationObs']; ?></td>
+                                <td><?= $rows['NomObs']; ?></td>
+                                <td><?= $rows['ContactObs']; ?></td>
+                                <td><?= $rows['CommentaireObs']; ?></td>
+                            </tr>
+                    <?php
+                        endwhile;
+                    ?>
                 </tbody>
             </table>
         </div>

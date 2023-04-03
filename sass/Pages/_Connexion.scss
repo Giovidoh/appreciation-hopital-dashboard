@@ -1,5 +1,6 @@
 .connexion-main{
     justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     margin-left: 0;
@@ -24,18 +25,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 300px;
+    box-sizing: content-box;
+    height: 400px;
+    padding: 20px;
+    width: 60%;
         &__heading{
             font-family: 'Inter', sans-serif;
             text-align: center;
         }
 
         &__form{
-            min-width: 300px;
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-                input[type="text"], , input[type="password"]{
+            @include dashboard-forms();
+                input[type="text"], input[type="password"]{
                     @include inscription-connexion-input();
                 }
 

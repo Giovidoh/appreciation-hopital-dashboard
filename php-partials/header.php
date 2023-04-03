@@ -1,5 +1,5 @@
 <?php
-    if(isset($_SESSION['id'])):
+    if(isset($_SESSION['id'])): 
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +31,10 @@
         </div>
         
     </header>
+<?php else: ?> 
+    <?php
+        header("Location:connexion.php");
+    ?>
 <?php
-    else: header("Location:connexion.php");
-
     endif;
 ?>

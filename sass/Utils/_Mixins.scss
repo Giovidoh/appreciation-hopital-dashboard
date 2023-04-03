@@ -68,3 +68,16 @@
     margin-bottom: 20px;
     padding: 10px;
 }
+
+@mixin dashboard-forms(){
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: $color-secondary-1;
+    box-sizing: content-box;
+    padding: 10%;
+    box-shadow: inset 5px 5px 10px opacify-color($pure-black, 0.1),
+                inset -5px -5px 10px opacify-color($pure-white, 0.7),
+                3px 3px 5px opacify-color($pure-black, 0.1);
+}

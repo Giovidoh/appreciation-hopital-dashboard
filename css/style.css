@@ -228,10 +228,14 @@ main {
   text-align: center;
 }
 .inscription-main-form__form {
-  min-width: 300px;
   width: 50%;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  background-color: #E8E8FF;
+  box-sizing: content-box;
+  padding: 10%;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.7), 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .inscription-main-form__form input[type=text], .inscription-main-form__form input[type=password] {
   width: 100%;
@@ -264,6 +268,7 @@ main {
 
 .connexion-main {
   justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   margin-left: 0;
@@ -288,17 +293,24 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 300px;
+  box-sizing: content-box;
+  height: 400px;
+  padding: 20px;
+  width: 60%;
 }
 .connexion-main-form__heading {
   font-family: "Inter", sans-serif;
   text-align: center;
 }
 .connexion-main-form__form {
-  min-width: 300px;
-  width: 30%;
+  width: 50%;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  background-color: #E8E8FF;
+  box-sizing: content-box;
+  padding: 10%;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.7), 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .connexion-main-form__form input[type=text], .connexion-main-form__form input[type=password] {
   width: 100%;
