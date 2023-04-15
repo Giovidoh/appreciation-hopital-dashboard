@@ -12,7 +12,7 @@
         //Vérifier si les données entrées sont valides
         $sql = "SELECT IdentifiantUt, TypeUt
                 FROM utilisateur
-                WHERE IdentifiantUt='$id'
+                WHERE IdentifiantUt = '$id'
                 AND MdpUt = '$mdp';";
         $resultat = mysqli_query($connexion, $sql);
         $row = mysqli_fetch_assoc($resultat);

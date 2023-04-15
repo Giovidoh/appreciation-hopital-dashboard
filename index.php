@@ -155,11 +155,11 @@
                         while($rows = mysqli_fetch_assoc($resultat)):
                     ?>
                             <tr>
-                                <td><?= $rows['NumObs']; ?></td>
-                                <td><?= $rows['AppreciationObs']; ?></td>
-                                <td><?= $rows['NomObs']; ?></td>
-                                <td><?= $rows['ContactObs']; ?></td>
-                                <td><?= $rows['CommentaireObs']; ?></td>
+                                <td><?php echo $rows['NumObs']; ?></td>
+                                <td><?php echo $rows['AppreciationObs']; ?></td>
+                                <td><?php echo $rows['NomObs']; ?></td>
+                                <td><?php echo $rows['ContactObs']; ?></td>
+                                <td><?php echo $rows['CommentaireObs']; ?></td>
                             </tr>
                     <?php
                         endwhile;
