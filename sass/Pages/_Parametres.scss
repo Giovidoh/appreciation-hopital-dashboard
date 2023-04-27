@@ -1,0 +1,29 @@
+.parameters-main{
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.parameters-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        &__heading{
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        &__form{
+            @include dashboard-forms();
+        }
+
+        input{
+            @include inscription-connexion-input()
+        }
+
+        input[type="submit"]{
+            @include input-submit($color: $pure-white, $bgcolor: $color-secondary-2);
+            @include input-submit-hover($color: $pure-white, $bgcolor: $color-secondary-2);
+        }
+}

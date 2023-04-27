@@ -41,8 +41,8 @@
                 }
 
                 input[type="submit"]{
-                    @include inscription-links($color: $pure-white, $bgcolor: $color-secondary-2);
-                    @include inscription-links-hover($color: $pure-white, $bgcolor: $color-secondary-2);
+                    @include input-submit($color: $pure-white, $bgcolor: $color-secondary-2);
+                    @include input-submit-hover($color: $pure-white, $bgcolor: $color-secondary-2);
                 }
         }
 }

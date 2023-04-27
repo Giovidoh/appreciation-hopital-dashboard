@@ -18,6 +18,11 @@
     include("php-partials/connectionDB.php");
 ?>
 
+<!-- RÉCUPÉRATION DES DONNÉES DE L'INTERVALLE DE TEMPS -->;
+<?php
+    include("recup/recupTimeInterval.php");
+?>
+
 <!-- LES DIFFÉRENTS TYPES D'APPRÉCIATIONS -->
 <?php
     $TresSatisfait = "Très satisfait";
@@ -29,9 +34,16 @@
 <!-- SELECTIONNER LES NOMBRES DES APPRÉCIATION DE LA BDD -->
 <?php
     // Nombre de Très satisfait
-    $sql = "SELECT COUNT(*) as nombre
-            FROM observation
-            WHERE AppreciationObs = \"$TresSatisfait\"; ";
+    if(isset($beginningDate) && isset($endingDate)){
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$TresSatisfait\"
+                AND DateObs BETWEEN '$beginningDate' AND '$endingDate';";
+    }else{
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$TresSatisfait\";";
+    }
     $resultat = mysqli_query($connexion, $sql);
     $row = mysqli_fetch_assoc($resultat);
     if($row){
@@ -39,9 +51,16 @@
     }
 
     // Nombre de Satisfait
-    $sql = "SELECT COUNT(*) as nombre
-            FROM observation
-            WHERE AppreciationObs = \"$Satisfait\"; ";
+    if(isset($beginningDate) && isset($endingDate)){
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$Satisfait\"
+                AND DateObs BETWEEN '$beginningDate' AND '$endingDate';";
+    }else{
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$Satisfait\";";
+    }
     $resultat = mysqli_query($connexion, $sql);
     $row = mysqli_fetch_assoc($resultat);
     if($row){
@@ -49,9 +68,16 @@
     }
 
     // Nombre de Peu satisfait
-    $sql = "SELECT COUNT(*) as nombre
-            FROM observation
-            WHERE AppreciationObs = \"$PeuSatisfait\"; ";
+    if(isset($beginningDate) && isset($endingDate)){
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$PeuSatisfait\"
+                AND DateObs BETWEEN '$beginningDate' AND '$endingDate';";
+    }else{
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$PeuSatisfait\";";
+    }
     $resultat = mysqli_query($connexion, $sql);
     $row = mysqli_fetch_assoc($resultat);
     if($row){
@@ -59,9 +85,16 @@
     }
 
     // Nombre de Pas du tout satisfait
-    $sql = "SELECT COUNT(*) as nombre
-            FROM observation
-            WHERE AppreciationObs = \"$PasDuToutSatisfait\"; ";
+    if(isset($beginningDate) && isset($endingDate)){
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$PasDuToutSatisfait\"
+                AND DateObs BETWEEN '$beginningDate' AND '$endingDate';";
+    }else{
+        $sql = "SELECT COUNT(*) as nombre
+                FROM observation
+                WHERE AppreciationObs = \"$PasDuToutSatisfait\";";
+    }
     $resultat = mysqli_query($connexion, $sql);
     $row = mysqli_fetch_assoc($resultat);
     if($row){
@@ -71,70 +104,105 @@
 
 <!-- MAIN -->
     <main class="dashboard-main">
+        <!-- AFFICHER DES MESSAGES -->
+        <?php
+            if(isset($message) && isset($type)):
+        ?>
+            <p class="failure-success-message <?= $type; ?>">
+                <?php
+                    echo $message;
+                ?>
+            </p>
+        <?php
+            endif;
+        ?>
+        <fieldset class="dashboard-main-time">
+            <legend class="dashboard-main-time__title">Intervalle de temps</legend>
+            <form class="dashboard-main-time__form" method="POST">
 
-        <span class="dashboard-main-heading__title">Statistiques</span>
+                <div>
+                    <label for="">Date début</label>
+                    <input name="beginningDate" type="date" required>
+                </div>
 
-        <div class="dashboard-main-heading">
-            <div class="dashboard-main-heading__box">
-                <div class="dashboard-main-heading__box__appreciation">
-                    <span>Très satisfait</span>
+                <div>
+                    <label for="">Date fin</label>
+                    <input name="endingDate" type="date" required>
                 </div>
-                
-                <div class="dashboard-main-heading__box__count">
-                    <span>
-                        <?php
-                            echo $nbreTresSatisfait;
-                        ?>
-                    </span>
-                </div>
-            </div>
 
-            <div class="dashboard-main-heading__box">
-                <div class="dashboard-main-heading__box__appreciation">
-                    <span>Satisfait</span>
+                <div class="dashboard-main-time__form__submit">
+                    <input name="sendTime" type="submit" value="OK">
                 </div>
-                
-                <div class="dashboard-main-heading__box__count">
-                    <span>
-                        <?php
-                            echo $nbreSatisfait;
-                        ?>
-                    </span>
-                </div>
-            </div>
+            </form>
 
-            <div class="dashboard-main-heading__box">
-                <div class="dashboard-main-heading__box__appreciation">
-                    <span>Peu statisfait</span>
-                </div>
-                
-                <div class="dashboard-main-heading__box__count">
-                    <span>
-                        <?php
-                            echo $nbrePeuSatisfait;
-                        ?>
-                    </span>
-                </div>
-            </div>
+            <form class="dashboard-main-time__form-reset" method="POST">
+                <input name="resetAll" type="submit" value="Réinitialiser">
+            </form>
 
-            <div class="dashboard-main-heading__box">
-                <div class="dashboard-main-heading__box__appreciation">
-                    <span>Pas du tout satisfait</span>
+        </fieldset>
+        <fieldset class="dashboard-main-stats">
+            <legend class="dashboard-main-stats__title">Statistiques</legend>
+                <div class="dashboard-main-stats__box">
+                    <div class="dashboard-main-stats__box__appreciation">
+                        <span>Très satisfait</span>
+                    </div>
+                    
+                    <div class="dashboard-main-stats__box__count">
+                        <span>
+                            <?php
+                                echo $nbreTresSatisfait;
+                            ?>
+                        </span>
+                    </div>
                 </div>
-                
-                <div class="dashboard-main-heading__box__count">
-                    <span>
-                        <?php
-                            echo $nbrePasDuToutSatisfait;
-                        ?>
-                    </span>
+
+                <div class="dashboard-main-stats__box">
+                    <div class="dashboard-main-stats__box__appreciation">
+                        <span>Satisfait</span>
+                    </div>
+                    
+                    <div class="dashboard-main-stats__box__count">
+                        <span>
+                            <?php
+                                echo $nbreSatisfait;
+                            ?>
+                        </span>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <span class="dashboard-main-answers__title">Liste des réponses des clients</span>
+                <div class="dashboard-main-stats__box">
+                    <div class="dashboard-main-stats__box__appreciation">
+                        <span>Peu statisfait</span>
+                    </div>
+                    
+                    <div class="dashboard-main-stats__box__count">
+                        <span>
+                            <?php
+                                echo $nbrePeuSatisfait;
+                            ?>
+                        </span>
+                    </div>
+                </div>
 
-        <div class="dashboard-main-answers">
+                <div class="dashboard-main-stats__box">
+                    <div class="dashboard-main-stats__box__appreciation">
+                        <span>Pas du tout satisfait</span>
+                    </div>
+                    
+                    <div class="dashboard-main-stats__box__count">
+                        <span>
+                            <?php
+                                echo $nbrePasDuToutSatisfait;
+                            ?>
+                        </span>
+                    </div>
+                </div>
+        </fieldset>
+
+        
+
+        <fieldset class="dashboard-main-answers">
+            <legend class="dashboard-main-answers__title">Liste des réponses des clients</legend>
             <table>
                 <thead>
                     <tr>
@@ -143,14 +211,23 @@
                         <th>Nom & Prénoms</th>
                         <th>Contact</th>
                         <th>Commentaire du client</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
-                        $sql = "SELECT NumObs, AppreciationObs, CommentaireObs, NomObs, ContactObs
-                                FROM observation
-                                ORDER BY NumObs DESC;";
+                        if(isset($beginningDate) && isset($endingDate)){
+                            $sql = "SELECT NumObs, AppreciationObs, CommentaireObs, NomObs, ContactObs, DateObs
+                                    FROM observation
+                                    WHERE DateObs BETWEEN '$beginningDate' AND '$endingDate'
+                                    ORDER BY NumObs DESC;";
+                        }else{
+                            $sql = "SELECT NumObs, AppreciationObs, CommentaireObs, NomObs, ContactObs, DateObs
+                                    FROM observation
+                                    ORDER BY NumObs DESC;";
+                        }
+                        
                         $resultat = mysqli_query($connexion, $sql);
                         while($rows = mysqli_fetch_assoc($resultat)):
                     ?>
@@ -160,16 +237,16 @@
                                 <td><?php echo $rows['NomObs']; ?></td>
                                 <td><?php echo $rows['ContactObs']; ?></td>
                                 <td><?php echo $rows['CommentaireObs']; ?></td>
+                                <td><?php echo date("d/m/Y", strtotime($rows['DateObs'])); ?></td>
                             </tr>
                     <?php
                         endwhile;
                     ?>
                 </tbody>
             </table>
-        </div>
+        </fieldset>
         
     </main>
-    
 
 </body>
 </html>

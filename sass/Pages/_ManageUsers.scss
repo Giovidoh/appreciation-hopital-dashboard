@@ -124,13 +124,13 @@
                         }
 
                         &__oui{
-                            @include inscription-links($color: $pure-white, $bgcolor: $color-primary);
-                            @include inscription-links-hover($color: $pure-white, $bgcolor: $color-primary);
+                            @include input-submit($color: $pure-white, $bgcolor: $color-primary);
+                            @include input-submit-hover($color: $pure-white, $bgcolor: $color-primary);
                         }
 
                         &__non{
-                            @include inscription-links($color: $pure-white, $bgcolor: $color-secondary-3);
-                            @include inscription-links-hover($color: $pure-white, $bgcolor: $color-secondary-3);
+                            @include input-submit($color: $pure-white, $bgcolor: $color-secondary-3);
+                            @include input-submit-hover($color: $pure-white, $bgcolor: $color-secondary-3);
                         }
                 }
 

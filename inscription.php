@@ -26,6 +26,7 @@
 <!-- MAIN -->
 
     <main class="inscription-main">
+        <!-- AFFICHER DES MESSAGES -->
         <?php
             if(isset($message) && isset($type)):
         ?>
