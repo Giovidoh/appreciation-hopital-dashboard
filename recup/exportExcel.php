@@ -5,7 +5,7 @@
     if(isset($_POST['sendExportInExcel']) && isset($_POST['filename'])){
         extract($_POST);
         header('Content-Type: text/csv;');
-        header("Content-Disposition: attachment; filename=" . $filename . ".csv");
+        header("Content-Disposition: attachment; filename=\"" . $filename . ".csv\";");
 
         $sql = "SELECT NumObs, AppreciationObs, CommentaireObs, NomObs, ContactObs, DateObs
                 FROM observation;";
