@@ -18,7 +18,7 @@
     include("php-partials/connectionDB.php");
 ?>
 
-<!-- RÉCUPÉRATION DES DONNÉES DE L'INTERVALLE DE TEMPS -->;
+<!-- RÉCUPÉRATION DES DONNÉES DE L'INTERVALLE DE TEMPS -->
 <?php
     include("recup/recupTimeInterval.php");
 ?>
@@ -101,6 +101,9 @@
         $nbrePasDuToutSatisfait = $row['nombre'];
     }
 ?>
+
+<!-- OVERLAY -->
+<div id="overlay"></div>
 
 <!-- MAIN -->
     <main class="dashboard-main">
@@ -199,10 +202,16 @@
                 </div>
         </fieldset>
 
-        
-
         <fieldset class="dashboard-main-answers">
             <legend class="dashboard-main-answers__title">Liste des réponses des clients</legend>
+
+            <div class="dashboard-main-answers__heading">
+                <button id="exportExcelBtn" class="dashboard-main-answers__heading__export">
+                    <img src="images/excel.svg" alt="icône du logo d'excel">
+                    Exporter en Excel
+                </button>
+            </div>
+
             <table>
                 <thead>
                     <tr>
@@ -245,8 +254,23 @@
                 </tbody>
             </table>
         </fieldset>
+
+        <!-- FORMULAIRE DE DÉFINITION DU NOM DU FICHIER EXCEL -->
+        <div id="excel-filename-form" class="excel-filename-form">
+            <div class="excel-filename-form__close">
+                &times;
+            </div>
+            <h3>Entrez le nom sous lequel la liste sera exportée : </h3>
+            <form action="recup/exportExcel.php" method="POST">
+                <input id="filename" name="filename" type="text" required>
+                <input name="sendExportInExcel" type="submit" value="Exporter">
+            </form>
+        </div>
         
     </main>
 
+
+    <!-- JS -->
+    <script src="js/index.js"></script>
 </body>
 </html>

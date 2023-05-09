@@ -112,6 +112,7 @@
     align-items: center;
     font-family: 'Inter', sans-serif;
     display: flex;
+    flex-direction: column;
         &__title{
             margin: 0px 0px 10px 20px;
             padding: 0 10px;
@@ -121,7 +122,37 @@
             font-weight: bold;
         }
 
+        &__heading{
+                width: 100%;
+                padding: 0px 20px;
+                display: flex;
+                justify-content: flex-end;
+                &__export{
+                    text-decoration: none;
+                    background-color: $color-primary;
+                    color: $pure-white;
+                    padding: 8px 20px;
+                    border-radius: 5px;
+                    border: none;
+                    min-width: 180px;
+                    width: 20%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+                        &:hover{
+                            @include input-submit-hover($color: $pure-white, $bgcolor: $color-primary);
+                        }
+
+                        img{
+                            height: 20px;
+                        }
+                }
+        }
+
         table{
+            margin-top: 20px;
             width: 100%;
             // border-collapse: collapse;
         }
@@ -142,5 +173,55 @@
             border: 1px solid opacify-color($color-secondary-2, 0.5);
             max-width: 300px;
             word-break: break-all;
+        }
+}
+
+//FORMULAIRE DE DÉFINITION DU NOM DU FICHIER EXCEL
+.excel-filename-form{
+    @include dashboard-forms();
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    font-family: 'Inter', sans-serif;
+    display: none;
+        &.active{
+            display: block;
+        }
+
+        &__close{
+            position: absolute;
+            top: 0;
+            right: -40px;
+            background-color: $color-secondary-1;
+            font-family: 'Inter', sans-serif;
+            font-size: 25px;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 5px opacify-color($pure-black, 0.3),
+                        inset -2px -2px 5px opacify-color($color-secondary-2, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+                &.active{
+                    display: block;
+                }
+        }
+
+        h3{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input:not(input[type="submit"]){
+            @include inscription-connexion-input();
+        }
+
+        input[type="submit"]{
+            @include input-submit($color: $pure-white, $bgcolor: $color-primary);
+            @include input-submit-hover($color: $pure-white, $bgcolor: $color-primary);
         }
 }
