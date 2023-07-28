@@ -19,7 +19,7 @@
         if($row){
             $_SESSION['id'] = $id;
             $_SESSION['type'] = $row['TypeUt'];
-            header("Location:index.php");
+            header("Location:accueil.php");
         }else{
             $message="Identifiant ou mot de passe incorrect !";
         }

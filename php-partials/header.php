@@ -43,7 +43,7 @@
     </header>
 <?php else: ?> 
     <?php
-        header("Location:connexion.php");
+        header("Location:index.php");
     ?>
 <?php
     endif;
